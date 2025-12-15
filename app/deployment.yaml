@@ -11,6 +11,8 @@ spec:
     metadata:
       labels:
         app: demo
+      annotations:
+        configmap-version: "v1"   # 👈 ใส่ตรงนี้
     spec:
       containers:
       - name: nginx
