@@ -13,7 +13,14 @@ spec:
         app: demo
     spec:
       containers:
-      - name: demo
-        image: nginx
+      - name: nginx
+        image: nginx:alpine
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: html
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: html
+        configMap:
+          name: html-config
